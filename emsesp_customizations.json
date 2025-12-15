@@ -1,0 +1,31 @@
+{
+  "type": "customizations",
+  "Customizations": {
+    "ts": [
+      {
+        "id": "28_FF93_4C58_2302",
+        "name": "gateway_temperature",
+        "offset": 0
+      }
+    ],
+    "as": [
+      {
+        "gpio": 39,
+        "name": "core_voltage",
+        "offset": 0,
+        "factor": 0.003771,
+        "uom": 23,
+        "type": 3
+      },
+      {
+        "gpio": 36,
+        "name": "supply_voltage",
+        "offset": 0,
+        "factor": 0.017,
+        "uom": 23,
+        "type": 3
+      }
+    ],
+    "masked_entities": []
+  }
+}
