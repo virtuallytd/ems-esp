@@ -25,11 +25,23 @@ This repository tracks the configuration files for an EMS-ESP device monitoring 
 
 ## Configuration Files
 
-- `emsesp_settings.json` - Main system settings (network, MQTT, security, EMS bus)
+### Template Files (Tracked in Git)
+- `emsesp_settings.json` - Main system settings with CHANGE_ME placeholders
 - `emsesp_allvalues.json` - Current system status and all readable values
 - `emsesp_customizations.json` - Custom temperature and analog sensor configurations
 - `emsesp_entities.json` - Custom entity definitions
 - `emsesp_schedule.json` - Heating/DHW schedules
+
+### Local Files (Not Tracked in Git)
+- `emsesp_settings.local.json` - **Your actual settings with real credentials** (gitignored)
+- Use this file for your real configuration - it contains actual passwords and IP addresses
+- Never commit this file to version control
+
+### How It Works
+1. **Template files** (*.json) contain placeholders and are tracked in git
+2. **Local files** (*.local.json) contain your real credentials and are excluded from git
+3. When you export settings from your EMS-ESP device, save them as *.local.json
+4. You can safely share or backup your repository without exposing credentials
 
 ## Current System Status
 
@@ -192,8 +204,10 @@ Monitor via MQTT topics or through the EMS-ESP Home Assistant integration.
 
 ## Notes
 
-- This is a **private repository** - credentials are stored in config files
-- Configuration files are backed up here for version control and disaster recovery
+- This is a **private repository** using a template/local file pattern for security
+- **Sensitive credentials** are stored in `*.local.json` files (gitignored)
+- **Template files** with placeholders are tracked in git for version control
+- Configuration files are backed up here for disaster recovery
 - Always test changes in a controlled manner before deploying to production
 - Consult a qualified HVAC technician for critical system changes
 

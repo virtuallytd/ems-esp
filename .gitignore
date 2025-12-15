@@ -1,6 +1,9 @@
 # Claude Code settings
 .claude/
 
+# EMS-ESP local configuration files with real credentials
+*.local.json
+
 # macOS
 .DS_Store
 .AppleDouble
